@@ -1,0 +1,597 @@
+//@import "~@angular/material/theming";
+@use '~@angular/material' as mat;
+@use "~@angular/material/theming";
+@use "src/theme/theme-variables";
+
+// ****  General Styles  ****** //
+// *****************************//
+
+// ********* Main Section for Homepage / Animation *********** ///
+// *************************************************//
+$num: 20;
+$vh: 100vh;
+$vw: 100%;
+
+section.homepage {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  padding: 0;
+  overflow: hidden;
+}
+section.homepage .whale {
+  z-index: 16;
+  position: absolute;
+  animation: 5s whale ease-in-out infinite;
+}
+section.homepage .ice {
+  z-index: 16;
+  position: absolute;
+  left: 5%;
+  animation: bounce 1s infinite alternate;
+  transition: all 200s ease-in;
+  transition: all 200s ease-out;
+}
+
+section.homepage .waveWrapperInner {
+  position: absolute;
+  width: 100%;
+  overflow: hidden;
+  height: 100%;
+  bottom: -1px;
+  background-image: linear-gradient(to top, #003c8f 40%, #9be7ff 100%);
+}
+section.homepage .bgTop {
+  z-index: 14;
+  opacity: 1;
+}
+section.homepage .bgMiddle {
+  z-index: 15;
+  opacity: 0.7;
+}
+section.homepage .bgBottom {
+  z-index: 17;
+  opacity: 0.1;
+}
+
+section.homepage .waves {
+  position: absolute;
+  left: 0;
+  width: 200%;
+  height: 100%;
+  background-repeat: repeat no-repeat;
+  background-position: 0 bottom;
+  transform-origin: center bottom;
+}
+section.homepage .waveAnimation .waveTop {
+  background-image: url("/assets/Images/wave-top.png");
+  animation: move-wave 3s;
+  -webkit-animation: move-wave 3s;
+  -webkit-animation-delay: 1s;
+  animation-delay: 1s;
+  left: -15px;
+}
+section.homepage .waveAnimation .waveMiddle {
+  background-image: url("/assets/Images/wave-mid.png");
+  animation: move_wave 10s linear infinite;
+}
+section.homepage .waveAnimation .waveBottom {
+  background-image: url("/assets/Images/wave-bot.png");
+  animation: move_wave 15s linear infinite;
+  background-size: 50% 400px;
+}
+
+// ********** Main container Home message ***************//
+main section.homepage .message-container {
+  position: absolute;
+  top: 20%;
+  z-index: 100;
+}
+main section.homepage .message-container h1 {
+  @include headers($light-color, 500, 10px 0, 0);
+  font-family: $secondary-font;
+  opacity: 0.8;
+  transition: all 0.75s ease;
+  animation: fadeInRight 1s;
+}
+main section.homepage .message-container h2 {
+  @include headers($light-color, 500, 30px 0, 0);
+  font-family: $secondary-font;
+  transition: all 0.75s ease;
+  animation: fadeInRight 1s;
+}
+
+// ****  Sections ****** //
+// *****************************//
+//All
+section {
+  padding: 40px;
+}
+
+//Home Section
+section.desc {
+  padding: 100px 20px;
+}
+section.desc h3 {
+  @include headers($light-color, 500, 20px 0 40px, 0, 40px);
+  font-family: $secondary-font;
+  line-height: 1.2em;
+}
+section.desc h4 {
+  @include headers($light-color, 500, 20px 0 40px, 0, 30px);
+  font-family: $secondary-font;
+  line-height: 1.2em;
+}
+section.desc h5 {
+  @include headers($light-color, 300, 20px 0 40px, 0, 30px);
+  font-family: $secondary-font;
+  line-height: 1em;
+}
+section.desc p {
+  font-family: $special-header;
+  color: #fff;
+  line-height: 1.3em;
+  font-weight: 300;
+}
+//About
+section.about {
+  padding: 20px 20px 0 0px;
+}
+section.about h1,
+section.about h2,
+section.about p {
+  color: $light-color;
+}
+section.about h1 {
+  @include headers($light-color, 500, 20px 0 40px, 0);
+  font-family: $secondary-font;
+  line-height: 1.2em;
+}
+section.about p {
+  line-height: 1.7em;
+  opacity: 0.8;
+  font-family: $primary-font;
+}
+section .img {
+  border: 10px solid #fff;
+  border-radius: 3px;
+}
+
+section.facts {
+  position: relative;
+  background-size: cover;
+}
+section.facts h3 {
+ @include headers($light-color, 500, 20px 0 40px, 0, 4em);
+  font-family: $secondary-font;
+  padding: 10px 15px;
+  line-height: 1.3em;
+  background: #000;
+}
+section.facts p {
+  font-family: $special-header;
+  color: #fff;
+  line-height: 1.3em;
+  font-weight: 300;
+  padding: 10px 15px;
+  background: #000;
+  display: table;
+}
+//Resume
+section.resume h1 {
+  @include headers($light-color, 500, 20px 0 10px, 0, 3em);
+  font-family: $secondary-font;
+  line-height: 1.2em;
+}
+section.resume h2 {
+  color: $light-color;
+  font-size: 1.8em;
+  font-family: $primary-font;
+}
+section.resume p {
+  color: $light-color;
+  font-size: 1.4em;
+  font-family: $primary-font;
+}
+section.resume a {
+  color: $light-color;
+}
+
+// ****  Top Navigation  ****** //
+// *****************************//
+nav {
+  @extend %top-nav;
+  position: fixed;
+  z-index: 101;
+}
+nav a {
+  box-sizing: border-box;
+  position: relative;
+  user-select: none;
+  cursor: pointer;
+  outline: 0;
+  border: 0;
+  -webkit-tap-highlight-color: transparent;
+  display: inline-block;
+  white-space: nowrap;
+  text-decoration: none;
+  vertical-align: baseline;
+  text-align: center;
+  margin: 0;
+  min-width: 64px;
+  padding: 0 16px;
+  overflow: visible;
+  font-weight: 400;
+  color: mat-color($primary, lighter);
+  font-family: $secondary-font;
+  font-size: 22px;
+  height: 100%;
+  line-height: 64px;
+}
+nav .menu-button {
+  margin: 0.8em 0;
+}
+
+.mat-menu-content,
+.mat-menu-content:not(:empty) {
+  padding: 0 !important;
+}
+.mat-menu-panel {
+  border-radius: 0px !important;
+}
+.cdk-overlay-connected-position-bounding-box {
+  top: 114px;
+  left: 210px;
+}
+
+// ****  Message Displays  ****** //
+// *****************************//
+.msg {
+  padding: 15px;
+}
+.msg h3 {
+  @include headers($light-color, 500, 0, 0, 20px);
+}
+.success-msg {
+  background-color: $success-color;
+}
+.error-msg {
+  background-color: $error-color;
+}
+.msg .clear {
+  color: $light-color;
+  position: absolute;
+  right: 0;
+  top: -8px;
+}
+
+// **** Buttons and Icons *************
+// *******************************
+// These buttons are used in an OOCSS pattern, layering to get a desired effect
+//Sizes
+.btn {
+  @extend %btn-base;
+}
+.btn-sm {
+  @extend %btn-base-sm;
+}
+//Colors
+.btn-primary {
+  background-color: mat-color($primary);
+  color: $light-color;
+} // Blue, main blue
+.btn-secondary {
+  color: $light-color;
+  border-color: $light-color !important;
+  border: 1px solid;
+  background: none; 
+}
+
+.primary-button {
+  background-color: mat-color($primary);
+  color: $light-color !important;
+}
+.success-button {
+  //background-color: mat-color($accent);
+  color: $light-color !important;
+}
+.oval-button {
+  border-radius: 50px !important;
+}
+.mat-raised-button .mat-icon {
+  fill: $light-color;
+  margin-right: 4px;
+  margin-top: 3px;
+}
+.material-icons.md-18 {
+  font-size: 20px;
+}
+
+// ****  Home Section  ****** //
+// *****************************//
+.logo {
+  float: left;
+}
+h3.logoText {
+  @include headers(mat-color($primary, lighter), 500, 10px 0 10px 10px, 0, 30px);
+  float: left;
+}
+
+.inline-loader {
+  display: inline-block;
+}
+
+h3.error,
+.login-error {
+ // color: mat-color($warn);
+  margin: 0 0 16px;
+}
+
+.error,
+.error [class*="mat-"],
+.error .mat-form-field-underline {
+  //color: mat-color($warn) !important;
+}
+
+.menu-button {
+  margin: 1rem;
+}
+
+.mat-toolbar-top .userMenu {
+  float: right;
+  margin: 10px 0;
+}
+.mat-toolbar-top .userMenu span {
+  vertical-align: super;
+}
+
+// ****  All Animations  ****** //
+// ****************************//
+
+@keyframes whale {
+  from,
+  to {
+    top: 48%;
+    transform: rotate(-1deg);
+  }
+  45%,
+  55% {
+    top: 54%;
+    transform: rotate(9deg);
+  }
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-12px);
+  }
+}
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes move_wave {
+  0% {
+    transform: translateX(0) translateZ(0) scaleY(1);
+  }
+  50% {
+    transform: translateX(-25%) translateZ(0) scaleY(0.55);
+  }
+  100% {
+    transform: translateX(-50%) translateZ(0) scaleY(1);
+  }
+}
+.fadeInRight {
+  -webkit-animation-name: fadeInRight;
+  animation-name: fadeInRight;
+}
+
+// ****  Responsive Design  ****** //
+// *****************************//
+// Mobile Devices/Phone
+@media (min-width: 300px) {
+  .mat-toolbar-top a {
+    padding: 0 10px;
+    font-size: 16px;
+  } // General
+  //General
+  .show-md {
+    display: none;
+  }
+  .show-lg {
+    display: none;
+  }
+  .show-sm {
+    display: flex;
+  }
+  .sideContent {
+    padding: 0px;
+  }
+  section {
+    padding: 20px 0;
+  }
+  h3 {
+    text-align: center;
+  }
+  //Homepage
+  section.homepage .whale {
+    top: 60%;
+    left: 50%;
+    background-image: url("/assets/Images/whale-phone.png");
+    width: 112px;
+    height: 150px;
+  }
+  section.homepage .ice {
+    top: 50%;
+    left: 5%;
+    background-image: url("/assets/Images/ice-phone.png");
+    width: 145px;
+    height: 200px;
+  }
+  main section.homepage .message-container {
+    left: 5%;
+    padding: 5px;
+  }
+  main section.homepage .message-container h1 {
+    text-align: center;
+    font-size: 2.2em;
+  }
+  main section.homepage .message-container h2 {
+    text-align: center;
+    font-size: 2.5em;
+    line-height: 1.3em;
+  }
+  section.desc {
+    padding: 50px 20px;
+  }
+  section.desc p {
+    font-size: 1.7em;
+  }
+  //About
+  section.facts {
+    background-image: url("/assets/Images/facts-tablet-bg.jpg");
+    height: auto;
+  }
+  section.about h1 {
+    font-size: 1.5em;
+  }
+  section.about p {
+    font-size: 1.5em;
+  }
+  section.facts h3 {
+    font-size: 2em;
+  }
+}
+// Tablet
+@media (min-width: 768px) {
+  .show-sm {
+    display: none;
+  }
+  .show-md {
+    display: flex;
+  }
+  .mat-toolbar-top a {
+    padding: 0 1em;
+    font-size: 1.4em;
+  }
+  .mat-toolbar-top .menu {
+    display: block;
+  }
+  .mat-toolbar-bottom {
+    display: none !important;
+  } // Tables // .table-data { max-width: inherit; } // Detail Page
+  .sideContent {
+    padding: 0 1em;
+  }
+  //Homepage
+  section.homepage .whale {
+    top: 70%;
+    left: 50%;
+    background-image: url("/assets/Images/whale.png");
+    width: 200px;
+    height: 268px;
+  }
+  section.homepage .ice {
+    top: 50%;
+    background-image: url("/assets/Images/ice2.png");
+    width: 290px;
+    height: 400px;
+  }
+  main section.homepage .message-container {
+    left: 10%;
+    padding: 30px;
+  }
+  main section.homepage .message-container h1 {
+    text-align: center;
+    font-size: 4em;
+  }
+  main section.homepage .message-container h2 {
+    text-align: center;
+    font-size: 3em;
+  }
+  section.desc {
+    padding: 100px 20px;
+  }
+  section.desc p {
+    font-size: 2em;
+  }
+  //About
+  section.middle {
+    padding: 50px 15px 50px;
+  }
+  section.facts {
+    background-image: url("/assets/Images/facts-tablet-bg.jpg");
+  }
+  section.about h1 {
+    font-size: 2em;
+    margin: 0 0 20px;
+  }
+  section.facts h3 {
+    font-size: 2em;
+  }
+  section.about p,
+  section.facts p {
+    font-size: 1.3em;
+  }
+}
+
+// Desktop
+@media (min-width: 1024px) {
+  .show-md {
+    display: none;
+  }
+  .show-lg {
+    display: flex;
+  }
+  //Homepage
+  section.homepage .ice {
+    top: 40%;
+  }
+  section.homepage .whale {
+    top: 50%;
+    left: 25%;
+  }
+  main section.homepage .message-container {
+    left: 50%;
+    padding: 30px;
+  }
+  main section.homepage .message-container h1 {
+    text-align: left;
+    font-size: 4em;
+  }
+  main section.homepage .message-container h2 {
+    text-align: left;
+    font-size: 4em;
+  }
+  //About
+  section.middle {
+    padding: 70px 30px 80px;
+  }
+  section.facts {
+    background-image: url("/assets/Images/me-bg2.jpg");
+    height: 100vh;
+  }
+  section.about h1 {
+    font-size: 3em;
+    margin: 0 0 20px;
+  }
+  section.facts h3 {
+    font-size: 4em;
+  }
+  section.about p,
+  section.facts p {
+    font-size: 2em;
+  }
+}

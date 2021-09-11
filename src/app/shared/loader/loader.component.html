@@ -1,0 +1,4 @@
+<div [hidden]="!isLoading">
+  <mat-progress-spinner mode="indeterminate" [strokeWidth]="strokeWidth" [diameter]="32 * size"></mat-progress-spinner>
+  <h3 class="message" [ngClass]="{'whiteText': textColor === 'white', 'greyText': textColor === 'grey'}">{{message}}</h3>
+</div>
