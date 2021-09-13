@@ -1,0 +1,81 @@
+<!-- <div class="container" *ngIf="loadingImg">
+    <div class="row align-items-center loader">
+      <div class="col-sm-12">
+        <app-loader
+          [isLoading]="loadingImg"
+          message="Loading.."
+          textColor="grey"
+          size="7"
+          strokeWidth="10"
+          class="center"
+        ></app-loader>
+      </div>
+    </div>
+  </div> -->
+  
+  <div class="container-fluid" [ngClass]="{ hide: loadingImg, show: !loadingImg }">
+    <section class="about row align-items-center primary-bg-dark middle" color="primary">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+            <h1>I'm a designer / developer hybrid</h1>
+            <p>
+              Located in Cincinnati, OH but currently working remotely. I love solving complex problems with the latest
+              technologies. Updating 20 year old systems? You bet! Creating a fast, functional prototype that still looks
+              great? Sign me up. When I'm not working I'm usually gaming, reading, or taking photos somewhere.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  
+    <section class="row black-bg">
+      <div class="col-12">
+        <div class="row">
+          <div class="col-lg col-md col-sm-3" *ngFor="let image of imageCollection" (deferLoad)="image.show = true">
+            <img [src]="image.url" class="img-fluid img" *ngIf="image.show" />
+          </div>
+        </div>
+      </div>
+    </section>
+  
+    <section class="row middle lt-grey-bg">
+      <div class="container">
+        <div class="row justify-content-center align-items-center">
+          <div class="col-lg-auto col-md-6 col-sm-auto">
+            <h3>50% Designer</h3>
+            <p>UI Design </p>
+            <p>UX Research and Prototypes</p>
+            <p>Wireframing / mockups using Axure</p>
+            <p>HTML, CSS3, Sass</p>
+            <p>Accessibility</p>
+            <p>Comfortable with mockups or designing in code</p>
+          </div>
+          <div class="col-lg-auto col-md-6 col-sm-auto offset-xl-1">
+            <h3>50% Developer</h3>
+            <p>Project planning</p>
+            <p>Mentoring and coaching</p>
+            <p>Angular and TypeScript</p>
+            <p>Loves reusable components and documenting</p>
+            <p>Azure DevOps, Jira, Git, Webpack</p>
+            <p>Microsoft <3</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  
+    <section class="row facts justify-content-between align-items-center">
+      <div class="col-auto offset-lg-1 show-lg show-md">
+        <h3>Random Facts</h3>
+      </div>
+      <div class="col-auto">
+        <h3 class="show-sm">Random Facts</h3>
+        <p>I own a cat and one spider</p>
+        <p>I've hiked in a rainforest</p>
+        <p>I've walked down a runway</p>
+        <p>My photography has been published 3 times</p>
+        <p>Bourbon > beer</p>
+      </div>
+    </section>
+  </div>
+  
