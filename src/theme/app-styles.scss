@@ -73,7 +73,7 @@ section.homepage .waves {
   transform-origin: center bottom;
 }
 section.homepage .waveAnimation .waveTop {
-  background-image: url("/assets/Images/wave-top.png");
+  background-image: url("../assets/Images/wave-top.png");
   animation: move-wave 3s;
   -webkit-animation: move-wave 3s;
   -webkit-animation-delay: 1s;
@@ -81,7 +81,7 @@ section.homepage .waveAnimation .waveTop {
   left: -15px;
 }
 section.homepage .waveAnimation .waveMiddle {
-  background-image: url("/assets/Images/wave-mid.png");
+  background-image: url("../assets/Images/wave-mid.png");
   animation: move_wave 10s linear infinite;
 }
 section.homepage .waveAnimation .waveBottom {
@@ -438,14 +438,14 @@ h3.error,
   section.homepage .whale {
     top: 60%;
     left: 50%;
-    background-image: url("/assets/Images/whale-phone.png");
+    background-image: url("../assets/Images/whale-phone.png");
     width: 112px;
     height: 150px;
   }
   section.homepage .ice {
     top: 50%;
     left: 5%;
-    background-image: url("/assets/Images/ice-phone.png");
+    background-image: url("../assets/Images/ice-phone.png");
     width: 145px;
     height: 200px;
   }
@@ -470,7 +470,7 @@ h3.error,
   }
   //About
   section.facts {
-    background-image: url("/assets/Images/facts-tablet-bg.jpg");
+    background-image: url("../assets/Images/facts-tablet-bg.jpg");
     height: auto;
   }
   section.about h1 {
@@ -508,13 +508,13 @@ h3.error,
   section.homepage .whale {
     top: 70%;
     left: 50%;
-    background-image: url("/assets/Images/whale.png");
+    background-image: url("../assets/Images/whale.png");
     width: 200px;
     height: 268px;
   }
   section.homepage .ice {
     top: 50%;
-    background-image: url("/assets/Images/ice2.png");
+    background-image: url("../assets/Images/ice2.png");
     width: 290px;
     height: 400px;
   }
@@ -541,7 +541,7 @@ h3.error,
     padding: 50px 15px 50px;
   }
   section.facts {
-    background-image: url("/assets/Images/facts-tablet-bg.jpg");
+    background-image: url("../assets/Images/facts-tablet-bg.jpg");
   }
   section.about h1 {
     font-size: 2em;
@@ -593,7 +593,7 @@ h3.error,
     padding: 70px 30px 80px;
   }
   section.facts {
-    background-image: url("/assets/Images/me-bg2.jpg");
+    background-image: url("../assets/Images/me-bg2.jpg");
     height: 100vh;
   }
   section.about h1 {
