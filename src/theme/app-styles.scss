@@ -1,10 +1,19 @@
 //@import "~@angular/material/theming";
 @use '~@angular/material' as mat;
 @use "~@angular/material/theming";
-@use "src/theme/theme-variables";
 
 // ****  General Styles  ****** //
 // *****************************//
+
+ //Image Helpers
+ .img-fluid {
+  max-width: 100%;
+  height: auto;
+}
+
+.circle {
+  border-radius: 100%!important;
+}
 
 // ********* Main Section for Homepage / Animation *********** ///
 // *************************************************//
@@ -575,6 +584,10 @@ h3.error,
     text-align: left;
     font-size: 4em;
   }
+
+  .container, .container-sm, .container-md, .container-lg, .container-xl {
+    max-width: 1300px;
+}
   //About
   section.middle {
     padding: 70px 30px 80px;

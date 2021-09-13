@@ -11,9 +11,12 @@
 
 @forward "theme/bootstrap-grid.scss";
 
+
 // Angular Material custom theme
 // The mixins below must be included once so we separated them from the variables
-@import "~@angular/material/theming";
+//@import "~@angular/material/theming";
+
+@import "theme/theme-variables.scss";
 
 // Theme customization
 @import "theme/theme.scss";

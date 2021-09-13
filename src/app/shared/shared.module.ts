@@ -9,6 +9,6 @@ import { LoaderComponent } from './loader/loader.component';
   imports: [MaterialModule, CommonModule],
   declarations: [LoaderComponent],
   providers: [],
-  exports: [LoaderComponent]
+  exports: [LoaderComponent, MaterialModule]
 })
 export class SharedModule {}
