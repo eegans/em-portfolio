@@ -85,7 +85,7 @@ section.homepage .waveAnimation .waveMiddle {
   animation: move_wave 10s linear infinite;
 }
 section.homepage .waveAnimation .waveBottom {
-  background-image: url("/assets/Images/wave-bot.png");
+  background-image: url("../assets/Images/wave-bot.png");
   animation: move_wave 15s linear infinite;
   background-size: 50% 400px;
 }
