@@ -52,9 +52,9 @@ export class HomeComponent implements OnInit, AfterViewInit {
   //   });
   // }
 
-  // goToAbout() {
-  //   this.router.navigate(['/about']);
-  // }
+  goToAbout() {
+    this.router.navigate(['/resume']);
+  }
 
   //   onScrollInit(items: any) {
   //     const offset = window.innerHeight / 1.6;
