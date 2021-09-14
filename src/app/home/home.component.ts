@@ -52,7 +52,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
   //   });
   // }
 
-  goToAbout() {
+  goToResume() {
     this.router.navigate(['/resume']);
   }
 
