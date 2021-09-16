@@ -122,9 +122,13 @@ section.desc {
   padding: 100px 20px;
 }
 section.desc h3 {
-  @include headers($light-color, 500, 20px 0 40px, 0, 40px);
+  @include headers(mat-color($grey-shades, 800), 500, 20px 0 40px, 0, 40px);
   font-family: $secondary-font;
   line-height: 1.2em;
+
+  &:not(.light) {
+    @include headers($light-color, 500, 20px 0 40px, 0, 40px);
+  }
 }
 section.desc h4 {
   @include headers($light-color, 500, 20px 0 40px, 0, 30px);
@@ -138,9 +142,13 @@ section.desc h5 {
 }
 section.desc p {
   font-family: $special-header;
-  color: #fff;
   line-height: 1.3em;
   font-weight: 300;
+  color: mat-color($grey-shades, 800);
+
+  &:not(.light) {
+    color: #fff;
+  }
 }
 //About
 section.about {
@@ -231,7 +239,7 @@ nav a {
   padding: 0 16px;
   overflow: visible;
   font-weight: 400;
-  color: mat-color($primary, lighter);
+  color: #0078d1;
   font-family: $secondary-font;
   font-size: 22px;
   height: 100%;

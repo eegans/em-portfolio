@@ -4,7 +4,7 @@
  */
  @use '~@angular/material' as mat;
  @use "~@angular/material/theming";
- //@use "src/theme/theme-variables";
+ @use "src/theme/theme-variables";
  @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,600|Fjalla+One|Roboto+Condensed:300,500");
  
  // ****  Basic Variables  ****** //
@@ -117,15 +117,15 @@
  .mat-typography h3,
  .mat-typography h4,
  .mat-typography h5 {
-   @include headers(#555, 500, 10px 0, 0, 20px);
+   @include headers(mat-color($grey-shades, 800), 500, 10px 0, 0, 20px);
  }
  
  .mat-typography h1,
  .mat-typography h2 {
-   @include headers(#555, 500, 10px 0, 0, 30px);
+   @include headers(mat-color($grey-shades, 800), 500, 10px 0, 0, 30px);
  }
  .mat-typography h3 {
-   @include headers(mat-color($grey-shades), 500, 30px 0, 0, 40px);
+   @include headers(mat-color($grey-shades, 800), 500, 30px 0, 0, 40px);
    font-family: $secondary-font;
  }
  .mat-typography p {
@@ -320,6 +320,33 @@
  
  // **** Card Sections  *************
  // *******************************
+.about { 
+  .mat-card {
+    box-shadow: 0 5px 5px -3px rgb(0 0 0 / 20%), 0 8px 10px 1px rgb(0 0 0 / 14%), 0 3px 14px 2px rgb(0 0 0 / 12%);
+  }
+
+  .mat-card-avatar {
+    height: 150px;
+    width: 150px;
+    border-radius: 100%;
+  }
+
+  .mat-card-header .mat-card-title {
+    margin-bottom: 20px;
+    margin-top: 10px;
+    font-size: 22px;
+  }
+
+  .mat-card-subtitle {
+    font-size: 16px;
+    color: mat-color($grey-shades, darker);
+  }
+
+  .mat-card-header {
+    border-bottom: none;
+  }
+  
+}
  .mat-card-header {
    border-bottom: 1px solid rgba(0, 0, 0, 0.12);
  }
@@ -333,6 +360,7 @@
  .mat-card h3 {
    @include headers(mat-color($grey-shades, darker), 500, 10px 0 20px, 0, 2em);
    font-family: $secondary-font;
+   text-align: left;
  }
  .mat-card h5 {
    @include headers(mat-color($grey-shades, darker), 500, 10px 0 20px, 0, 1.5em);
@@ -450,6 +478,10 @@
  }
  
  //Backgrounds
+.white-bg {
+  background-color: $light-color;
+}
+
  .black-bg {
    background-color: #000;
  }
