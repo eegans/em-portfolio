@@ -9,16 +9,18 @@ import { ResumeComponent } from './resume/resume.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SharedModule } from '../app/shared/shared.module';
 import { AppRoutingModule } from './app-routing.module';
+import { PortfolioComponent } from './portfolio/portfolio.component';
 
 
 
 @NgModule({
-  declarations: [
+  declarations: [	
     AppComponent,
     HomeComponent,
     AboutComponent,
-    ResumeComponent
-  ],
+    ResumeComponent,
+      PortfolioComponent
+   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
