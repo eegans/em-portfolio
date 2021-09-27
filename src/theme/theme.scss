@@ -340,6 +340,8 @@
   .mat-card-subtitle {
     font-size: 16px;
     color: mat-color($grey-shades, darker);
+    line-height: 1.5em;
+    font-family: 'Roboto';
   }
 
   .mat-card-header {
@@ -350,6 +352,14 @@
  .mat-card-header {
    border-bottom: 1px solid rgba(0, 0, 0, 0.12);
  }
+
+ .mat-card-header span.date {
+  @include headers(mat-color($grey-shades, darker), 500, 10px 0 20px, 0, 14px);
+  display: block;
+  font-family: $primary-font;
+  width: 100%;
+ }
+
  .card-section .mat-card {
    padding: 20px;
    min-height: 100%;
@@ -370,8 +380,8 @@
  .mat-card ul li {
    line-height: 1.4em;
    font-family: $primary-font;
-   font-size: 1.3em;
-   padding-bottom: 20px;
+   font-size: 1.1em;
+   padding-bottom: 15px;
  }
  
  // **** Cards   *************

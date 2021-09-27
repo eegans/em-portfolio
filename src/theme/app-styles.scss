@@ -166,8 +166,11 @@ section.about h1 {
 }
 section.about p {
   line-height: 1.7em;
-  opacity: 0.8;
   font-family: $primary-font;
+}
+section.about p.darker {
+  color: mat-color($grey-shades, darker);
+  font-size: 1.2em;
 }
 section .img {
   border: 10px solid #fff;
@@ -610,9 +613,11 @@ h3.error,
   }
   section.facts h3 {
     font-size: 4em;
-  }
-  section.about p,
+  }  
   section.facts p {
     font-size: 2em;
+  }
+  section.about p {
+    font-size: 1.2em;
   }
 }
