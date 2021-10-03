@@ -19,8 +19,8 @@
 // hue.
 
 $primary: mat.define-palette(mat.$blue-palette, 800, 500, 900);
-$accent: mat.define-palette(mat.$deep-purple-palette, 500, 300, 700);
-$shades: mat.define-palette(mat.$grey-palette, 50, 800);
+$accent: mat.define-palette(mat.$deep-purple-palette, 500, 400, 700);
+$shades: mat.define-palette(mat.$grey-palette, 50, 900);
 $warn: mat.define-palette(mat.$red-palette);
 
 $angular-default-theme: mat.define-light-theme(

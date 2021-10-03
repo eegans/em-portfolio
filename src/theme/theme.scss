@@ -5,19 +5,19 @@
  @use '~@angular/material' as mat;
  @use "~@angular/material/theming";
  @use "src/theme/theme-variables";
- @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,600|Fjalla+One|Roboto+Condensed:300,500");
+ @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600|Roboto+Condensed:300,400,500");
  
  // ****  Basic Variables  ****** //
  // *****************************//
- $primary-font: "Open Sans", Helvetica, sans-serif; //Main site font
- $secondary-font: "Fjalla One", sans-serif; //Header font
- $special-header: "Roboto Condensed", Helvetica, sans-serif;
+ $primary-font: 'Source Sans Pro', sans-serif; //Main site font
+ $secondary-font: "Roboto Condensed", Helvetica, sans-serif; //Header font
+ $special-header: 'Source Sans Pro', sans-serif;
  $light-color: #ffffff; //Mainly used for text and form inputs
  $primary: mat.define-palette(mat.$blue-palette, 800, 500, 900);
- $accent: mat.define-palette(mat.$deep-purple-palette, 500, 300, 700);
+ $accent: mat.define-palette(mat.$deep-purple-palette, 500, 400, 700);
  
  //Grey shades used throughout
- $grey-shades: mat.define-palette(mat.$grey-palette, 500, 200, 800); //Shades of grey. Med, Light, Dark
+ $grey-shades: mat.define-palette(mat.$grey-palette, 500, 200, 900); //Shades of grey. Med, Light, Dark
  
  //Colors for warning, success, error messages
  $success-color: #43a047;
@@ -39,7 +39,8 @@
  // *****************************//
  %top-nav {
    background-color: $light-color;
-   color: mat-color($primary, darker);
+  // color: mat-color($primary, darker);
+  color: #1f92ef;
    width: 100%;
    min-height: 64px;
  }
@@ -56,14 +57,16 @@
  
  %btn-base {
    font-weight: 600;
-   padding: 0.7em 1em 0.7em 1em !important;
-   font-size: 22px;
+   padding: 8px 13px !important;
+   font-size: 18px;
    font-family: $primary-font;
    text-transform: uppercase;
+   border-radius: 8px;
+   margin-top: 15px;
  }
  %btn-base-sm {
    font-weight: 600;
-   padding: 0.217em 0.347em;
+   padding: 8px 13px;
    font-size: 12px;
    font-family: $primary-font;
    text-transform: uppercase;
@@ -80,17 +83,24 @@
    display: flex;
    flex-direction: column;
    margin: 0;
+   //height: 100vh;
    height: 100%;
-   font-size: 1.3em;
-   background-color: mat-color($grey-shades);
+   //min-height: 100vh;
+   font-size: 14px;
+   background-color: #f9f9f9;
    line-height: 1.2em;
+  // text-rendering: geometricPrecision;
  }
  body footer {
+   margin-top:auto;
+   background-color: mat-color($primary);
+   padding: 20px;
+   font-size: 20px;
+  // height: 80px;
+   z-index: 50;
    display: flex;
    flex-direction: column;
    margin: 0;
-   background-color: mat-color($primary);
-   padding: 20px;
  }
  body footer h5 {
    @include headers(mat-color($grey-shades, lighter) !important, 500, 10px 0, 0, 1em);
@@ -104,6 +114,17 @@
  html {
    position: initial !important;
  }
+hr {
+  color: #ddd;
+  background-color: #ddd;
+  border: none;
+   height: 1px;
+}
+
+a {
+  text-decoration: underline;
+}
+
  hr.new {
    border-top: 1px solid #ddd;
    border-left: 0px;
@@ -128,8 +149,17 @@
    @include headers(mat-color($grey-shades, 800), 500, 30px 0, 0, 40px);
    font-family: $secondary-font;
  }
- .mat-typography p {
-   font-size: 1.3em;
+
+ .mat-typography h4 {
+  font-family: $primary-font;
+  margin-bottom: 0.125em;
+  font-size: 1.6em;
+  font-weight: 600;
+}
+
+ .mat-typography p, .mat-typography ul li {
+  font-size: 1.3em;
+  line-height: 1.5em;
    font-family: $primary-font;
  }
  
@@ -353,6 +383,33 @@
    border-bottom: 1px solid rgba(0, 0, 0, 0.12);
  }
 
+
+ .portfolio {
+  .mat-card {    
+    max-width: 400px;
+   }
+
+  .mat-card-image {
+    margin-bottom: 0;
+  }
+
+  .mat-icon {
+    line-height: 21px;
+  }
+  .mat-stroked-button {
+    padding-right: 5px;
+  }
+
+  .mat-card-actions {
+    margin: 0px;
+  }
+
+  .mat-card>.mat-card-actions:last-child {
+    margin: 0;
+  }
+
+ }
+ 
  .mat-card-header span.date {
   @include headers(mat-color($grey-shades, darker), 500, 10px 0 20px, 0, 14px);
   display: block;
@@ -365,7 +422,7 @@
    min-height: 100%;
  }
  .mat-card .mat-card-content {
-   padding: 25px 0px 0px;
+   padding: 20px 0px 0px;
  }
  .mat-card h3 {
    @include headers(mat-color($grey-shades, darker), 500, 10px 0 20px, 0, 2em);
@@ -453,8 +510,9 @@
  }
  .fullHeight {
    min-height: 100%;
-   height: 100%;
+   height: calc(100vh - 144px);
    position: relative;
+   padding-bottom: 80px;
  }
  .loader {
    height: 100vh;
@@ -484,7 +542,7 @@
  //Color Helpers
  //Font
  .font-white {
-   color: $light-color;
+   color: $light-color!important;
  }
  
  //Backgrounds
@@ -502,7 +560,8 @@
    background-color: mat-color($grey-shades, lighter);
  }
  .primary-bg {
-   background-color: mat-color($primary, lighter);
+   //background-color: mat-color($primary, lighter);
+   background-color: #1f92ef;
  }
  .primary-bg-dark {
    background-color: mat-color($accent);

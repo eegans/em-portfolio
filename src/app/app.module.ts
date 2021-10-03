@@ -10,6 +10,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SharedModule } from '../app/shared/shared.module';
 import { AppRoutingModule } from './app-routing.module';
 import { PortfolioComponent } from './portfolio/portfolio.component';
+import { InternalComponent } from './portfolio/internal/internal.component';
 
 
 
@@ -19,7 +20,8 @@ import { PortfolioComponent } from './portfolio/portfolio.component';
     HomeComponent,
     AboutComponent,
     ResumeComponent,
-      PortfolioComponent
+    PortfolioComponent,
+    InternalComponent
    ],
   imports: [
     BrowserModule,

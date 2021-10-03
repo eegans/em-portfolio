@@ -97,14 +97,14 @@ main section.homepage .message-container {
   z-index: 100;
 }
 main section.homepage .message-container h1 {
-  @include headers($light-color, 500, 10px 0, 0);
+  @include headers($light-color, 700, 10px 0, 0);
   font-family: $secondary-font;
   opacity: 0.8;
   transition: all 0.75s ease;
   animation: fadeInRight 1s;
 }
 main section.homepage .message-container h2 {
-  @include headers($light-color, 500, 30px 0, 0);
+  @include headers($light-color, 700, 30px 0, 0);
   font-family: $secondary-font;
   transition: all 0.75s ease;
   animation: fadeInRight 1s;
@@ -123,7 +123,7 @@ section.desc {
 }
 section.desc h3 {
   @include headers(mat-color($grey-shades, 800), 500, 20px 0 40px, 0, 40px);
-  font-family: $secondary-font;
+  font-family: $primary-font;
   line-height: 1.2em;
 
   &:not(.light) {
@@ -210,12 +210,90 @@ section.resume h2 {
 }
 section.resume p {
   color: $light-color;
-  font-size: 1.4em;
-  font-family: $primary-font;
+  font-size: 22px;
+  font-family: $secondary-font;
+  font-weight: 300;
 }
 section.resume a {
   color: $light-color;
 }
+//Portfolio // 
+
+
+section.portfolio {
+  max-height: 600px;
+  margin-bottom: 0px;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  background-color: #1f92ef;
+  background-image: none;
+
+  h1, h3, p {
+    color: $light-color;
+  } 
+
+  h5 {
+    @include headers($light-color, 500, 16px 0 10px, 0, 1.3em);
+    font-family: $secondary-font;
+    font-weight: 400;
+  }
+
+  img {
+    width: auto;
+    max-height: 400px;
+    margin: 0 auto;
+  }
+
+  .mat-stroked-button {
+    margin-top: 15px;
+
+  }
+
+  p {
+    font-size: 24px;
+    line-height: 1.3em;
+    font-family: "Roboto Condensed", Helvetica, sans-serif;
+    font-weight: 300;
+  }
+}
+
+section.case-study.lt-grey-bg {
+  padding: 40px 20px;
+}
+
+.case-study ul li {
+  margin-top: 5px;
+  margin-bottom: 10px;
+  font-family: $primary-font;
+  color: mat-color($grey-shades, 900);
+}
+
+.case-study p {
+  margin-top: 5px;
+  margin-bottom: 25px;
+  font-family: $primary-font;
+  color: mat-color($grey-shades, 900);
+}
+
+//Case Studies //
+
+.internal {
+  background-image: url(../assets/Images/banner-case.png);
+  background-size: auto;
+background-repeat: no-repeat;
+height: 200px;
+background-position: -200px -60px;
+align-items: center !important;
+}
+
+section.case-study h5 {
+  font-size: 2em;
+  font-family: "Roboto Condensed", Helvetica, sans-serif;
+  line-height: 1.3em;
+  font-weight: 300;
+  color: #424242;
+}
+
 
 // ****  Top Navigation  ****** //
 // *****************************//
@@ -241,8 +319,8 @@ nav a {
   min-width: 64px;
   padding: 0 16px;
   overflow: visible;
-  font-weight: 400;
-  color: #0078d1;
+  font-weight: 600;
+  color: #1f92ef;
   font-family: $secondary-font;
   font-size: 22px;
   height: 100%;
@@ -297,7 +375,7 @@ nav .menu-button {
 }
 //Colors
 .btn-primary {
-  background-color: mat-color($primary);
+  background-color: #1f92ef;
   color: $light-color;
 } // Blue, main blue
 .btn-secondary {
@@ -306,13 +384,18 @@ nav .menu-button {
   border: 1px solid;
   background: none; 
 }
+.btn-dark {
+  background-color: mat-color($grey-shades, 900);
+  color: $light-color;
+}
 
 .primary-button {
-  background-color: mat-color($primary);
+  background-color: #1f92ef;
   color: $light-color !important;
 }
-.success-button {
-  //background-color: mat-color($accent);
+.accent-button {
+  background-color: transparent;
+  border-color: mat-color($accent);
   color: $light-color !important;
 }
 .oval-button {
@@ -333,7 +416,7 @@ nav .menu-button {
   float: left;
 }
 h3.logoText {
-  @include headers(mat-color($primary, lighter), 500, 10px 0 10px 10px, 0, 30px);
+  @include headers(mat-color($primary, lighter), 600, 10px 0 10px 10px, 0, 30px);
   float: left;
 }
 
@@ -597,7 +680,7 @@ h3.error,
   }
 
   .container, .container-sm, .container-md, .container-lg, .container-xl {
-    max-width: 1300px;
+    max-width: 1100px;
 }
   //About
   section.middle {
