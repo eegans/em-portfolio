@@ -92,15 +92,12 @@
   // text-rendering: geometricPrecision;
  }
  body footer {
-   margin-top:auto;
    background-color: mat-color($primary);
    padding: 20px;
    font-size: 20px;
-  // height: 80px;
    z-index: 50;
-   display: flex;
-   flex-direction: column;
-   margin: 0;
+   margin-top: -76px;
+   position: relative;
  }
  body footer h5 {
    @include headers(mat-color($grey-shades, lighter) !important, 500, 10px 0, 0, 1em);
@@ -130,7 +127,7 @@ a {
    border-left: 0px;
  }
  .main-container {
-   padding-top: 64px;
+   margin-top: 64px;
  }
  
  .mat-typography h1,
@@ -510,9 +507,9 @@ a {
  }
  .fullHeight {
    min-height: 100%;
-   height: calc(100vh - 144px);
+   //height: calc(100vh - 144px);
    position: relative;
-   padding-bottom: 80px;
+   //padding-bottom: 80px;
  }
  .loader {
    height: 100vh;
