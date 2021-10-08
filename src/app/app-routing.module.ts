@@ -6,6 +6,7 @@ import { AboutComponent } from './about/about.component';
 import { ResumeComponent } from './resume/resume.component';
 import { PortfolioComponent } from './portfolio/portfolio.component';
 import { InternalComponent } from './portfolio/internal/internal.component';
+import { DesignProcessComponent } from './portfolio/design-process/design-process.component';
 
 const routes: Routes = [
     { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -13,7 +14,8 @@ const routes: Routes = [
     { path: 'about', component: AboutComponent },
     { path: 'resume', component: ResumeComponent},
     { path: 'portfolio', component: PortfolioComponent },
-    { path: 'internal', component: InternalComponent}
+    { path: 'internal', component: InternalComponent},
+    { path: 'design-process', component: DesignProcessComponent }
   ];
 
   @NgModule({

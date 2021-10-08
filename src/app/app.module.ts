@@ -11,6 +11,7 @@ import { SharedModule } from '../app/shared/shared.module';
 import { AppRoutingModule } from './app-routing.module';
 import { PortfolioComponent } from './portfolio/portfolio.component';
 import { InternalComponent } from './portfolio/internal/internal.component';
+import { DesignProcessComponent } from './portfolio/design-process/design-process.component';
 
 
 
@@ -21,7 +22,8 @@ import { InternalComponent } from './portfolio/internal/internal.component';
     AboutComponent,
     ResumeComponent,
     PortfolioComponent,
-    InternalComponent
+    InternalComponent,
+    DesignProcessComponent
    ],
   imports: [
     BrowserModule,

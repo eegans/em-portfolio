@@ -218,9 +218,7 @@ section.resume a {
   color: $light-color;
 }
 //Portfolio // 
-
-
-section.portfolio {
+section.portfolio:not(.white-bg) {
   max-height: 600px;
   margin-bottom: 0px;
   padding-top: 2%;
@@ -236,8 +234,32 @@ section.portfolio {
     @include headers($light-color, 500, 16px 0 10px, 0, 1.3em);
     font-family: $secondary-font;
     font-weight: 400;
-  }
+  }   
+}
 
+section.portfolio.lt-grey-bg {
+  max-height: 600px;
+  margin-bottom: 0px;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  background-image: none;
+
+  h1, h3, p {
+    color: mat-color($grey-shades, 900);
+  } 
+
+  h5 {
+    @include headers(mat-color($grey-shades, 900), 500, 16px 0 10px, 0, 1.3em);
+    font-family: $secondary-font;
+    font-weight: 400;
+  }   
+}
+
+section.portfolio {
+  max-height: 600px;
+  margin-bottom: 0px;
+  padding-top: 2%;
+  padding-bottom: 2%;
   img {
     width: auto;
     max-height: 400px;
@@ -246,7 +268,8 @@ section.portfolio {
 
   .mat-stroked-button {
     margin-top: 15px;
-
+   // border-color: mat-color($grey-shades, 900);
+   // color: mat-color($grey-shades, 900);
   }
 
   p {
@@ -283,6 +306,15 @@ section.case-study.lt-grey-bg {
 background-repeat: no-repeat;
 height: 200px;
 background-position: -200px -60px;
+align-items: center !important;
+}
+
+.design-process {
+  background-image: url(../assets/Images/design-ice.png);
+  background-size: auto;
+background-repeat: no-repeat;
+height: 250px;
+background-position: 700px 10px;
 align-items: center !important;
 }
 
@@ -374,19 +406,25 @@ nav .menu-button {
   @extend %btn-base-sm;
 }
 //Colors
+//Blue
 .btn-primary {
   background-color: #1f92ef;
   color: $light-color;
-} // Blue, main blue
+} 
+
+//White outlined
 .btn-secondary {
   color: $light-color;
   border-color: $light-color !important;
   border: 1px solid;
-  background: none; 
+  background: transparent; 
 }
-.btn-dark {
-  background-color: mat-color($grey-shades, 900);
-  color: $light-color;
+//Dark grey outlined
+.mat-stroked-button.btn-dark {
+  color:  mat-color($grey-shades, 900);
+  border-color: mat-color($grey-shades, 900);
+  border: 1px solid;
+  background-color:transparent;
 }
 
 .primary-button {
