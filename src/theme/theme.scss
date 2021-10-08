@@ -554,7 +554,7 @@ a {
    background-color: mat-color($grey-shades);
  }
  .lt-grey-bg {
-   background-color: mat-color($grey-shades, lighter);
+   background-color: mat-color($grey-shades, lighter)!important;
  }
  .primary-bg {
    //background-color: mat-color($primary, lighter);
