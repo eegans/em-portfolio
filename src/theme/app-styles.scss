@@ -1,18 +1,18 @@
 //@import "~@angular/material/theming";
-@use '~@angular/material' as mat;
+@use "~@angular/material" as mat;
 @use "~@angular/material/theming";
 
 // ****  General Styles  ****** //
 // *****************************//
 
- //Image Helpers
- .img-fluid {
+//Image Helpers
+.img-fluid {
   max-width: 100%;
   height: auto;
 }
 
 .circle {
-  border-radius: 100%!important;
+  border-radius: 100% !important;
 }
 
 // ********* Main Section for Homepage / Animation *********** ///
@@ -114,152 +114,158 @@ main section.homepage .message-container h2 {
 // *****************************//
 //All
 section {
-  padding: 40px;
+  @extend %section-container;
 }
 
-//Home Section
-section.desc {
-  padding: 100px 20px;
-}
-section.desc h3 {
-  @include headers(mat-color($grey-shades, 800), 500, 20px 0 40px, 0, 40px);
-  font-family: $primary-font;
-  line-height: 1.2em;
-
-  &:not(.light) {
-    @include headers($light-color, 500, 20px 0 40px, 0, 40px);
-  }
-}
-section.desc h4 {
-  @include headers($light-color, 500, 20px 0 40px, 0, 30px);
-  font-family: $secondary-font;
-  line-height: 1.2em;
-}
-section.desc h5 {
-  @include headers($light-color, 300, 20px 0 40px, 0, 30px);
-  font-family: $secondary-font;
-  line-height: 1em;
-}
-section.desc p {
-  font-family: $special-header;
-  line-height: 1.3em;
-  font-weight: 300;
-  color: mat-color($grey-shades, 800);
-
-  &:not(.light) {
-    color: #fff;
-  }
-}
-//About
-section.about {
-  padding: 20px 20px 0 0px;
-}
-section.about h1,
-section.about h2,
-section.about p {
-  color: $light-color;
-}
-section.about h1 {
-  @include headers($light-color, 500, 20px 0 40px, 0);
-  font-family: $secondary-font;
-  line-height: 1.2em;
-}
-section.about p {
-  line-height: 1.7em;
-  font-family: $primary-font;
-}
-section.about p.darker {
-  color: mat-color($grey-shades, darker);
-  font-size: 1.2em;
-}
 section .img {
   border: 10px solid #fff;
   border-radius: 3px;
 }
 
+//Home Section
+section.desc {
+  h3 {
+    @include headers(mat-color($grey-shades, 800), 500, 20px 0 40px, 0, 40px);
+    font-family: $primary-font;
+    line-height: 1.2em;
+
+    &:not(.light) {
+      @include headers($light-color, 500, 20px 0 40px, 0, 40px);
+    }
+  }
+
+  h4 {
+    @include headers($light-color, 500, 20px 0 40px, 0, 30px);
+    font-family: $secondary-font;
+    line-height: 1.2em;
+  }
+  h5 {
+    @include headers($light-color, 300, 20px 0 40px, 0, 30px);
+    font-family: $secondary-font;
+    line-height: 1em;
+  }
+
+  p {
+    font-family: $special-header;
+    line-height: 1.3em;
+    font-weight: 300;
+    color: mat-color($grey-shades, 800);
+
+    &:not(.light) {
+      color: #fff;
+    }
+  }
+}
+
+//About
+section.about {
+  h1,
+  section.about h2,
+  section.about p {
+    color: $light-color;
+  }
+
+  h1 {
+    @include headers($light-color, 500, 20px 0 40px, 0);
+    font-family: $secondary-font;
+    line-height: 1.2em;
+  }
+
+  p {
+    line-height: 1.7em;
+    font-family: $primary-font;
+    color: mat-color($grey-shades, lighter);
+
+  }
+  p.darker {
+    color: mat-color($grey-shades, darker);
+    font-size: 1.2em;
+  }
+}
+
 section.facts {
-  position: relative;
   background-size: cover;
+
+  h3 {
+    @include headers($light-color, 500, 20px 0 40px, 0, 4em);
+    font-family: $secondary-font;
+    padding: 10px 15px;
+    line-height: 1.3em;
+    background: #000;
+  }
+
+  p {
+    font-family: $special-header;
+    color: #fff;
+    line-height: 1.3em;
+    font-weight: 300;
+    padding: 10px 15px;
+    background: #000;
+    display: table;
+  }
 }
-section.facts h3 {
- @include headers($light-color, 500, 20px 0 40px, 0, 4em);
-  font-family: $secondary-font;
-  padding: 10px 15px;
-  line-height: 1.3em;
-  background: #000;
-}
-section.facts p {
-  font-family: $special-header;
-  color: #fff;
-  line-height: 1.3em;
-  font-weight: 300;
-  padding: 10px 15px;
-  background: #000;
-  display: table;
-}
+
 //Resume
-section.resume h1 {
-  @include headers($light-color, 500, 20px 0 10px, 0, 3em);
-  font-family: $secondary-font;
-  line-height: 1.2em;
+section.resume {
+  h1 {
+    @include headers($light-color, 500, 20px 0 10px, 0, 3em);
+    font-family: $secondary-font;
+    line-height: 1.2em;
+  }
+
+  h2 {
+    color: $light-color;
+    font-size: 1.8em;
+    font-family: $primary-font;
+  }
+
+  p {
+    color: $light-color;
+    font-size: 22px;
+    font-family: $secondary-font;
+    font-weight: 300;
+  }
+
+  a {
+    color: $light-color;
+  }
 }
-section.resume h2 {
-  color: $light-color;
-  font-size: 1.8em;
-  font-family: $primary-font;
-}
-section.resume p {
-  color: $light-color;
-  font-size: 22px;
-  font-family: $secondary-font;
-  font-weight: 300;
-}
-section.resume a {
-  color: $light-color;
-}
-//Portfolio // 
+
+//Portfolio //
 section.portfolio:not(.white-bg) {
-  max-height: 600px;
-  margin-bottom: 0px;
-  padding-top: 2%;
-  padding-bottom: 2%;
   background-color: #1f92ef;
   background-image: none;
 
-  h1, h3, p {
+  h1,
+  h3,
+  p {
     color: $light-color;
-  } 
+  }
 
   h5 {
     @include headers($light-color, 500, 16px 0 10px, 0, 1.3em);
     font-family: $secondary-font;
     font-weight: 400;
-  }   
+  }
 }
 
 section.portfolio.lt-grey-bg {
-  max-height: 600px;
-  margin-bottom: 0px;
-  padding-top: 2%;
-  padding-bottom: 2%;
   background-image: none;
 
-  h1, h3, p {
+  h1,
+  h3,
+  p {
     color: mat-color($grey-shades, 900);
-  } 
+  }
 
   h5 {
     @include headers(mat-color($grey-shades, 900), 500, 16px 0 10px, 0, 1.3em);
     font-family: $secondary-font;
     font-weight: 400;
-  }   
+  }
 }
 
 section.portfolio {
-  max-height: 600px;
-  margin-bottom: 0px;
-  padding-top: 2%;
-  padding-bottom: 2%;
   img {
     width: auto;
     max-height: 400px;
@@ -268,8 +274,8 @@ section.portfolio {
 
   .mat-stroked-button {
     margin-top: 15px;
-   // border-color: mat-color($grey-shades, 900);
-   // color: mat-color($grey-shades, 900);
+    // border-color: mat-color($grey-shades, 900);
+    // color: mat-color($grey-shades, 900);
   }
 
   p {
@@ -303,19 +309,19 @@ section.case-study.lt-grey-bg {
 .internal {
   background-image: url(../assets/Images/banner-case.png);
   background-size: auto;
-background-repeat: no-repeat;
-height: 200px;
-background-position: -200px -60px;
-align-items: center !important;
+  background-repeat: no-repeat;
+  height: 200px;
+  background-position: -200px -60px;
+  align-items: center !important;
 }
 
 .design-process {
   background-image: url(../assets/Images/design-ice.png);
   background-size: auto;
-background-repeat: no-repeat;
-height: 250px;
-background-position: 700px 10px;
-align-items: center !important;
+  background-repeat: no-repeat;
+  height: 250px;
+  background-position: 700px 10px;
+  align-items: center !important;
 }
 
 section.case-study h5 {
@@ -325,7 +331,6 @@ section.case-study h5 {
   font-weight: 300;
   color: #424242;
 }
-
 
 // ****  Top Navigation  ****** //
 // *****************************//
@@ -402,29 +407,27 @@ nav .menu-button {
 .btn {
   @extend %btn-base;
 }
-.btn-sm {
-  @extend %btn-base-sm;
-}
+
 //Colors
 //Blue
 .btn-primary {
   background-color: #1f92ef;
   color: $light-color;
-} 
+}
 
 //White outlined
 .btn-secondary {
   color: $light-color;
   border-color: $light-color !important;
   border: 1px solid;
-  background: transparent; 
+  background: transparent;
 }
 //Dark grey outlined
 .mat-stroked-button.btn-dark {
-  color:  mat-color($grey-shades, 900);
+  color: mat-color($grey-shades, 900);
   border-color: mat-color($grey-shades, 900);
   border: 1px solid;
-  background-color:transparent;
+  background-color: transparent;
 }
 
 .primary-button {
@@ -464,7 +467,7 @@ h3.logoText {
 
 h3.error,
 .login-error {
- // color: mat-color($warn);
+  // color: mat-color($warn);
   margin: 0 0 16px;
 }
 
@@ -546,8 +549,11 @@ h3.error,
   .mat-toolbar-top a {
     padding: 0 10px;
     font-size: 16px;
-  } // General
+  }
   //General
+  .hide-sm {
+    display: none;
+  }
   .show-md {
     display: none;
   }
@@ -565,6 +571,12 @@ h3.error,
   }
   h3 {
     text-align: center;
+  }
+  .aside-bottom {
+    margin-bottom: 1em;
+  }
+  .aside-top {
+    margin-top: 1em;
   }
   //Homepage
   section.homepage .whale {
@@ -614,14 +626,39 @@ h3.error,
   section.facts h3 {
     font-size: 2em;
   }
+
+  //Design Process
+  .design-process {
+    height: 100px;
+    align-items: center;
+    text-align: center;
+  }
+  section.design-process h1 {
+    //font-size: 2.5em;
+  }
+
+  //Interal
+  .internal {
+    background-image: none;
+    height: 100px;
+  }
 }
 // Tablet
 @media (min-width: 768px) {
+  .hide-sm {
+    display: block;
+  }
   .show-sm {
     display: none;
   }
   .show-md {
     display: flex;
+  }
+  .aside-bottom {
+    margin-bottom: 2em;
+  }
+  .aside-top {
+    margin-top: 2em;
   }
   .mat-toolbar-top a {
     padding: 0 1em;
@@ -686,6 +723,26 @@ h3.error,
   section.facts p {
     font-size: 1.3em;
   }
+
+  //Design Process
+  .design-process {
+    background-image: url(../assets/Images/design-ice.png);
+    background-size: auto;
+    background-repeat: no-repeat;
+    height: 250px;
+    background-position: 700px 10px;
+    align-items: center !important;
+    text-align: right;
+  }
+
+  //Internal 
+  .internal {
+    background-image: url(../assets/Images/banner-case.png);
+    background-size: auto;
+    background-repeat: no-repeat;
+    height: 200px;
+    background-position: -200px -60px;
+  }
 }
 
 // Desktop
@@ -717,9 +774,13 @@ h3.error,
     font-size: 4em;
   }
 
-  .container, .container-sm, .container-md, .container-lg, .container-xl {
+  .container,
+  .container-sm,
+  .container-md,
+  .container-lg,
+  .container-xl {
     max-width: 1100px;
-}
+  }
   //About
   section.middle {
     padding: 70px 30px 80px;
@@ -734,7 +795,7 @@ h3.error,
   }
   section.facts h3 {
     font-size: 4em;
-  }  
+  }
   section.facts p {
     font-size: 2em;
   }

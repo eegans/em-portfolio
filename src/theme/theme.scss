@@ -2,352 +2,348 @@
  * Global application theme.
  * Framework overrides and customization goes here.
  */
- @use '~@angular/material' as mat;
- @use "~@angular/material/theming";
- @use "src/theme/theme-variables";
- @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600|Roboto+Condensed:300,400,500");
- 
- // ****  Basic Variables  ****** //
- // *****************************//
- $primary-font: 'Source Sans Pro', sans-serif; //Main site font
- $secondary-font: "Roboto Condensed", Helvetica, sans-serif; //Header font
- $special-header: 'Source Sans Pro', sans-serif;
- $light-color: #ffffff; //Mainly used for text and form inputs
- $primary: mat.define-palette(mat.$blue-palette, 800, 500, 900);
- $accent: mat.define-palette(mat.$deep-purple-palette, 500, 400, 700);
- 
- //Grey shades used throughout
- $grey-shades: mat.define-palette(mat.$grey-palette, 500, 200, 900); //Shades of grey. Med, Light, Dark
- 
- //Colors for warning, success, error messages
- $success-color: #43a047;
- $warning-color: #e67e22;
- $error-color: #b92933;
- 
- // ****  Mixins  ****** //
- // *****************************//
- @mixin headers($color: #fff, $weight: 500, $margin: 10px 0, $padding: 0, $size: 20px) {
-   color: $color;
-   font-weight: $weight;
-   font-family: $secondary-font, sans-serif; 
-   margin: $margin;
-   padding: $padding;
-   font-size: $size;
- }
- 
- // ****  Extended Groups  ****** //
- // *****************************//
- %top-nav {
-   background-color: $light-color;
+@use "~@angular/material" as mat;
+@use "~@angular/material/theming";
+@use "src/theme/theme-variables";
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600|Roboto+Condensed:300,400,500");
+
+// ****  Basic Variables  ****** //
+// *****************************//
+$primary-font: "Source Sans Pro", sans-serif; //Main site font
+$secondary-font: "Roboto Condensed", Helvetica, sans-serif; //Header font
+$special-header: "Source Sans Pro", sans-serif;
+$light-color: #ffffff; //Mainly used for text and form inputs
+$primary: mat.define-palette(mat.$blue-palette, 800, 500, 900);
+$accent: mat.define-palette(mat.$deep-purple-palette, 500, 400, 700);
+
+//Grey shades used throughout
+$grey-shades: mat.define-palette(mat.$grey-palette, 500, 200, 900); //Shades of grey. Med, Light, Dark
+
+//Colors for warning, success, error messages
+$success-color: #43a047;
+$warning-color: #e67e22;
+$error-color: #b92933;
+
+// ****  Mixins  ****** //
+// *****************************//
+@mixin headers($color: #fff, $weight: 500, $margin: 10px 0, $padding: 0, $size: 20px) {
+  color: $color;
+  font-weight: $weight;
+  font-family: $secondary-font, sans-serif;
+  margin: $margin;
+  padding: $padding;
+  font-size: $size;
+}
+
+// ****  Extended Groups  ****** //
+// *****************************//
+%top-nav {
+  background-color: $light-color;
   // color: mat-color($primary, darker);
   color: #1f92ef;
-   width: 100%;
-   min-height: 64px;
- }
- %header-bar {
-   background-color: mat-color($primary);
-   color: $light-color;
- }
- %card-base {
-   background-color: #fff;
-   -webkit-box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14),
-     0 1px 5px 0 rgba(0, 0, 0, 0.12);
-   box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
- }
- 
- %btn-base {
-   font-weight: 600;
-   padding: 8px 13px !important;
-   font-size: 18px;
-   font-family: $primary-font;
-   text-transform: uppercase;
-   border-radius: 8px;
-   margin-top: 15px;
- }
- %btn-base-sm {
-   font-weight: 600;
-   padding: 8px 13px;
-   font-size: 12px;
-   font-family: $primary-font;
-   text-transform: uppercase;
- }
- 
- // ****  General Styles  ****** //
- // *****************************//
- * {
-   box-sizing: border-box;
- }
- 
- html,
- body {
-   display: flex;
-   flex-direction: column;
-   margin: 0;
-   //height: 100vh;
-   height: 100%;
-   //min-height: 100vh;
-   font-size: 14px;
-   background-color: #f9f9f9;
-   line-height: 1.2em;
-  // text-rendering: geometricPrecision;
- }
- body footer {
-   background-color: mat-color($primary);
-   padding: 20px;
-   font-size: 20px;
-   z-index: 50;
-   margin-top: -76px;
-   position: relative;
- }
- body footer h5 {
-   @include headers(mat-color($grey-shades, lighter) !important, 500, 10px 0, 0, 1em);
-   font-family: $secondary-font;
- }
- 
- :host {
-   display: flex;
-   flex: 1;
- }
- html {
-   position: initial !important;
- }
+  width: 100%;
+  min-height: 64px;
+}
+%header-bar {
+  background-color: mat-color($primary);
+  color: $light-color;
+}
+%card-base {
+  background-color: #fff;
+  -webkit-box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14),
+    0 1px 5px 0 rgba(0, 0, 0, 0.12);
+  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+}
+
+%btn-base {
+  font-weight: 600;
+  padding: 8px 13px !important;
+  font-size: 18px;
+  font-family: $primary-font;
+  text-transform: uppercase;
+  border-radius: 8px;
+  margin-top: 15px;
+}
+
+%section-container {
+  position: relative;
+  padding: 4%;
+}
+
+// ****  General Styles  ****** //
+// *****************************//
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  height: 100%;
+  font-size: 14px;
+  background-color: #f9f9f9;
+  line-height: 1.2em;
+}
+body footer {
+  background-color: mat-color($primary);
+  padding: 20px;
+  font-size: 20px;
+  z-index: 50;
+  //margin-top: -76px;
+  position: relative;
+}
+body footer h5 {
+  @include headers(mat-color($grey-shades, lighter) !important, 500, 10px 0, 0, 1em);
+  font-family: $secondary-font;
+}
+
+:host {
+  display: flex;
+  flex: 1;
+}
+html {
+  position: initial !important;
+}
 hr {
   color: #ddd;
   background-color: #ddd;
   border: none;
-   height: 1px;
+  height: 1px;
 }
 
 a {
   text-decoration: underline;
 }
 
- hr.new {
-   border-top: 1px solid #ddd;
-   border-left: 0px;
- }
- .main-container {
-   margin-top: 64px;
- }
- 
- .mat-typography h1,
- .mat-typography h2,
- .mat-typography h3,
- .mat-typography h4,
- .mat-typography h5 {
-   @include headers(mat-color($grey-shades, 800), 500, 10px 0, 0, 20px);
- }
- 
- .mat-typography h1,
- .mat-typography h2 {
-   @include headers(mat-color($grey-shades, 800), 500, 10px 0, 0, 30px);
- }
- .mat-typography h3 {
-   @include headers(mat-color($grey-shades, 800), 500, 30px 0, 0, 40px);
-   font-family: $secondary-font;
- }
+hr.new {
+  border-top: 1px solid #ddd;
+  border-left: 0px;
+}
+.main-container {
+  margin-top: 64px;
+}
 
- .mat-typography h4 {
+.mat-typography h1,
+.mat-typography h2,
+.mat-typography h3,
+.mat-typography h4,
+.mat-typography h5 {
+  @include headers(mat-color($grey-shades, 800), 500, 10px 0, 0, 20px);
+}
+
+.mat-typography h1,
+.mat-typography h2 {
+  @include headers(mat-color($grey-shades, 800), 500, 10px 0, 0, 30px);
+}
+.mat-typography h3 {
+  @include headers(mat-color($grey-shades, 800), 500, 30px 0, 0, 40px);
+  font-family: $secondary-font;
+}
+
+.mat-typography h4 {
   font-family: $primary-font;
   margin-bottom: 0.125em;
   font-size: 1.6em;
   font-weight: 600;
 }
 
- .mat-typography p, .mat-typography ul li {
+.mat-typography p,
+.mat-typography ul li {
   font-size: 1.3em;
   line-height: 1.5em;
-   font-family: $primary-font;
- }
- 
- // **** Table Styles *************
- // *******************************
- .mat-row {
-   border-left: 1px solid #e0e0e0;
-   border-right: 1px solid #e0e0e0;
- }
- .mat-table {
-   overflow: auto;
- }
- .mat-header-cell,
- th.mat-header-cell {
-   @extend %header-bar;
-   font-size: 14px;
-   padding: 0 15px !important;
- }
- .mat-elevation-z8,
- .mat-elevation-z4 {
-   @extend %card-base;
- }
- .mat-paginator-container {
-   height: 40px;
- }
- //For the sticky headers on tables. Change top to header/nav height. Comment out if top header isn't fixed.
- .mat-table-sticky {
-   top: 64px !important;
- }
- table .mat-icon .mat-badge-content {
-   right: -20px !important;
- }
- 
- // **** Modal window Popup / General Styles *************
- // *******************************
- .modal-window {
-   border-radius: 4px;
-   position: relative;
-   z-index: 50;
-   padding: 0;
-   background: mat-color($grey-shades, lighter);
- }
- .modal-window h3 {
-   color: mat-color($grey-shades, darker);
- }
- .modal-window .mat-dialog-title {
-   padding: 10px 20px;
- //  background-color: mat-color($accent);
-   margin: 0;
- }
- .modal-window .mat-dialog-title h3 {
-   color: $light-color;
-   font-weight: 400;
-   margin: 0;
-   font-size: 18px;
- }
- .modal-window .modal-footer {
-   padding: 10px 20px;
-   margin: 0;
-   border-top: 1px solid rgba(0, 0, 0, 0.12);
+  font-family: $primary-font;
+}
+
+// **** Table Styles *************
+// *******************************
+.mat-row {
+  border-left: 1px solid #e0e0e0;
+  border-right: 1px solid #e0e0e0;
+}
+.mat-table {
+  overflow: auto;
+}
+.mat-header-cell,
+th.mat-header-cell {
+  @extend %header-bar;
+  font-size: 14px;
+  padding: 0 15px !important;
+}
+.mat-elevation-z8,
+.mat-elevation-z4 {
+  @extend %card-base;
+}
+.mat-paginator-container {
+  height: 40px;
+}
+//For the sticky headers on tables. Change top to header/nav height. Comment out if top header isn't fixed.
+.mat-table-sticky {
+  top: 64px !important;
+}
+table .mat-icon .mat-badge-content {
+  right: -20px !important;
+}
+
+// **** Modal window Popup / General Styles *************
+// *******************************
+.modal-window {
+  border-radius: 4px;
+  position: relative;
+  z-index: 50;
+  padding: 0;
+  background: mat-color($grey-shades, lighter);
+}
+.modal-window h3 {
+  color: mat-color($grey-shades, darker);
+}
+.modal-window .mat-dialog-title {
+  padding: 10px 20px;
+  //  background-color: mat-color($accent);
+  margin: 0;
+}
+.modal-window .mat-dialog-title h3 {
+  color: $light-color;
+  font-weight: 400;
+  margin: 0;
+  font-size: 18px;
+}
+.modal-window .modal-footer {
+  padding: 10px 20px;
+  margin: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.12);
   // background: mat-color($grey-shades);
- }
- .modal-window .modal-actions {
-   padding: 10px 20px;
-   margin: 0;
-   border-top: 1px solid rgba(0, 0, 0, 0.12);
- }
- //.modal-actions button { font-size: 16px; }
- 
- .mat-dialog-container {
-   font-size: 14px;
-   padding: 0 !important;
- }
- .mat-dialog-content {
-   padding: 0px;
-   margin: 0;
- }
- .modal-window .mat-dialog-content,
- .modal-window .modal-window-body .slideshow .slideshow-container {
-   padding: 0 15px;
-   margin: 0;
-   max-height: inherit;
-   position: relative;
- }
- 
- .modal-window .modal-window-body h2 {
+}
+.modal-window .modal-actions {
+  padding: 10px 20px;
+  margin: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.12);
+}
+//.modal-actions button { font-size: 16px; }
+
+.mat-dialog-container {
+  font-size: 14px;
+  padding: 0 !important;
+}
+.mat-dialog-content {
+  padding: 0px;
+  margin: 0;
+}
+.modal-window .mat-dialog-content,
+.modal-window .modal-window-body .slideshow .slideshow-container {
+  padding: 0 15px;
+  margin: 0;
+  max-height: inherit;
+  position: relative;
+}
+
+.modal-window .modal-window-body h2 {
   // color: mat-color($grey-shades);
-   margin: 0 0 0px;
-   font-size: 25px;
- }
- .modal-window .modal-window-body h3 {
-   margin: 0 0 0px;
- }
- .modal-window .modal-window-body h4 {
-   margin: 0 0 3px;
-   font-size: 16px;
- //  color: mat-color($grey-shades);
-   font-weight: 400;
- }
- .modal-window .modal-window-body h4 span {
-   font-weight: 500;
-   padding-right: 8px;
- }
- .modal-window .modal-window-body h5 {
-   font-weight: 400;
-   font-size: 14px;
-   font-family: $primary-font;
+  margin: 0 0 0px;
+  font-size: 25px;
+}
+.modal-window .modal-window-body h3 {
+  margin: 0 0 0px;
+}
+.modal-window .modal-window-body h4 {
+  margin: 0 0 3px;
+  font-size: 16px;
+  //  color: mat-color($grey-shades);
+  font-weight: 400;
+}
+.modal-window .modal-window-body h4 span {
+  font-weight: 500;
+  padding-right: 8px;
+}
+.modal-window .modal-window-body h5 {
+  font-weight: 400;
+  font-size: 14px;
+  font-family: $primary-font;
   // color: mat-color($grey-shades);
- }
- .modal-window .modal-window-body p {
-   font-weight: 400;
- }
- .modal-window .modal-window-body img {
-   max-height: 400px;
-   display: block;
-   margin-left: auto;
-   margin-right: auto;
- }
- //Future slideshow implementation
- .modal-window .modal-window-body .slideshowArrowLeft {
-   position: absolute;
-   top: 35%;
-   left: 0;
-   width: 50%;
- }
- .modal-window .modal-window-body .slideshowArrowRight {
-   position: absolute;
-   top: 35%;
-   right: 0;
-   width: 60px;
- }
- .modal-window .modal-window-body .slideshowArrowLeft .mat-icon,
- .modal-window .modal-window-body .slideshowArrowRight .mat-icon {
-   font-size: 4em;
-   opacity: 0.7;
- }
- .modal-window .modal-window-body .slideshowArrowLeft:hover,
- .modal-window .modal-window-body .slideshowArrowRight:hover {
-   cursor: pointer;
- }
- .modal-window .modal-window-body .slideshow .slideshow-container {
-   width: 85%;
-   margin: 0 auto;
- }
- 
- .modal-window .mat-form-field-appearance-legacy .mat-form-field-label,
- .modal-window
-   .mat-form-field-appearance-legacy.mat-form-field-can-float.mat-form-field-should-float
-   .mat-form-field-label,
- .modal-window
-   .mat-form-field-appearance-legacy.mat-form-field-can-float
-   .mat-input-server:focus
-   + .mat-form-field-label-wrapper
-   .mat-form-field-label {
-   //color: mat-color($grey-shades);
- }
- .modal-window .mat-form-field-appearance-legacy .mat-form-field-underline {
-   background-color: $light-color;
- }
- .modal-window .search .mat-form-field-wrapper {
-   margin: 10px 0 0;
- }
- .modal-window .mat-form-field-appearance-fill .mat-form-field-flex {
-   background-color: $light-color;
-   border-radius: 2px;
- }
- .modal-window .modal-window-body {
-   padding: 20px 20px;
-   position: relative;
-   z-index: 51;
-   max-height: inherit;
- }
- .modal-window .modal-window-body.noTitle {
-   padding: 40px 20px;
- }
- .handle {
-   position: absolute;
-   cursor: move;
-   width: 100%;
-   height: 42px;
-   z-index: 52;
-   top: 0;
-   right: 0;
- }
- .mat-datepicker-content.mat-datepicker-content-touch {
-   margin: 0;
- } //Removes margin around the datepicker dialog window
- 
- // **** Card Sections  *************
- // *******************************
-.about { 
+}
+.modal-window .modal-window-body p {
+  font-weight: 400;
+}
+.modal-window .modal-window-body img {
+  max-height: 400px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+//Future slideshow implementation
+.modal-window .modal-window-body .slideshowArrowLeft {
+  position: absolute;
+  top: 35%;
+  left: 0;
+  width: 50%;
+}
+.modal-window .modal-window-body .slideshowArrowRight {
+  position: absolute;
+  top: 35%;
+  right: 0;
+  width: 60px;
+}
+.modal-window .modal-window-body .slideshowArrowLeft .mat-icon,
+.modal-window .modal-window-body .slideshowArrowRight .mat-icon {
+  font-size: 4em;
+  opacity: 0.7;
+}
+.modal-window .modal-window-body .slideshowArrowLeft:hover,
+.modal-window .modal-window-body .slideshowArrowRight:hover {
+  cursor: pointer;
+}
+.modal-window .modal-window-body .slideshow .slideshow-container {
+  width: 85%;
+  margin: 0 auto;
+}
+
+.modal-window .mat-form-field-appearance-legacy .mat-form-field-label,
+.modal-window
+  .mat-form-field-appearance-legacy.mat-form-field-can-float.mat-form-field-should-float
+  .mat-form-field-label,
+.modal-window
+  .mat-form-field-appearance-legacy.mat-form-field-can-float
+  .mat-input-server:focus
+  + .mat-form-field-label-wrapper
+  .mat-form-field-label {
+  //color: mat-color($grey-shades);
+}
+.modal-window .mat-form-field-appearance-legacy .mat-form-field-underline {
+  background-color: $light-color;
+}
+.modal-window .search .mat-form-field-wrapper {
+  margin: 10px 0 0;
+}
+.modal-window .mat-form-field-appearance-fill .mat-form-field-flex {
+  background-color: $light-color;
+  border-radius: 2px;
+}
+.modal-window .modal-window-body {
+  padding: 20px 20px;
+  position: relative;
+  z-index: 51;
+  max-height: inherit;
+}
+.modal-window .modal-window-body.noTitle {
+  padding: 40px 20px;
+}
+.handle {
+  position: absolute;
+  cursor: move;
+  width: 100%;
+  height: 42px;
+  z-index: 52;
+  top: 0;
+  right: 0;
+}
+.mat-datepicker-content.mat-datepicker-content-touch {
+  margin: 0;
+} //Removes margin around the datepicker dialog window
+
+// **** Card Sections  *************
+// *******************************
+.about {
   .mat-card {
     box-shadow: 0 5px 5px -3px rgb(0 0 0 / 20%), 0 8px 10px 1px rgb(0 0 0 / 14%), 0 3px 14px 2px rgb(0 0 0 / 12%);
   }
@@ -362,29 +358,28 @@ a {
     margin-bottom: 20px;
     margin-top: 10px;
     font-size: 22px;
+    line-height: 1.3em;
   }
 
   .mat-card-subtitle {
     font-size: 16px;
     color: mat-color($grey-shades, darker);
     line-height: 1.5em;
-    font-family: 'Roboto';
+    font-family: "Roboto";
   }
 
   .mat-card-header {
     border-bottom: none;
   }
-  
 }
- .mat-card-header {
-   border-bottom: 1px solid rgba(0, 0, 0, 0.12);
- }
+.mat-card-header {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+}
 
-
- .portfolio {
-  .mat-card {    
+.portfolio {
+  .mat-card {
     max-width: 400px;
-   }
+  }
 
   .mat-card-image {
     margin-bottom: 0;
@@ -401,237 +396,233 @@ a {
     margin: 0px;
   }
 
-  .mat-card>.mat-card-actions:last-child {
+  .mat-card > .mat-card-actions:last-child {
     margin: 0;
   }
+}
 
- }
- 
- .mat-card-header span.date {
-  @include headers(mat-color($grey-shades, darker), 500, 10px 0 20px, 0, 14px);
+.mat-card-header span.date {
+  @include headers(mat-color($grey-shades, darker), 500, 0, 0, 14px);
   display: block;
   font-family: $primary-font;
   width: 100%;
- }
+}
 
- .card-section .mat-card {
-   padding: 20px;
-   min-height: 100%;
- }
- .mat-card .mat-card-content {
-   padding: 20px 0px 0px;
- }
- .mat-card h3 {
-   @include headers(mat-color($grey-shades, darker), 500, 10px 0 20px, 0, 2em);
-   font-family: $secondary-font;
-   text-align: left;
- }
- .mat-card h5 {
-   @include headers(mat-color($grey-shades, darker), 500, 10px 0 20px, 0, 1.5em);
-   font-family: $primary-font;
- }
- .mat-card p,
- .mat-card ul li {
-   line-height: 1.4em;
-   font-family: $primary-font;
-   font-size: 1.1em;
-   padding-bottom: 15px;
- }
- 
- // **** Cards   *************
- // *******************************
- .card {
-   min-height: 190px;
- }
- .card .mat-card-header-text {
-   margin: 0;
- }
- .card ul li {
-   margin-bottom: 8px;
- }
- .card a {
-   color: mat-color($primary);
-   text-underline-position: under;
- }
- 
- // ****  Helper Classes  ****** //
- // *****************************//
- .aside-top-xs {
-   margin-top: 1em !important;
- }
- .aside-bottom-xs {
-   margin-bottom: 1em !important;
- }
- .aside-left-xs {
-   margin-left: 1em !important;
- }
- .aside-right-xs {
-   margin-right: 1em !important;
- }
- .aside-top {
-   margin-top: 2em !important;
- }
- .aside-bottom {
-   margin-bottom: 2em !important;
- }
- .aside-left {
-   margin-left: 2em !important;
- }
- .aside-right {
-   margin-right: 2em !important;
- }
- .aside-top-x1 {
-   margin-top: 4em !important;
- }
- .aside-bottom-x1 {
-   margin-bottom: 4em !important;
- }
- .aside-left-x1 {
-   margin-left: 4em !important;
- }
- .aside-right-x1 {
-   margin-right: 4em !important;
- }
- .strip {
-   list-style: none;
-   padding-left: 0;
- }
- .no-pad {
-   padding: 0 !important;
- }
- .hide {
-   visibility: hidden;
- }
- .show {
-   visibility: visible;
- }
- .fullHeight {
-   min-height: 100%;
-   //height: calc(100vh - 144px);
-   position: relative;
-   //padding-bottom: 80px;
- }
- .loader {
-   height: 100vh;
-   overflow: hidden;
- }
- 
+.card-section .mat-card {
+  padding: 20px;
+  min-height: 100%;
+}
+.mat-card .mat-card-content {
+  padding: 20px 0px 0px;
+}
+.mat-card h3 {
+  @include headers(mat-color($grey-shades, darker), 500, 10px 0 20px, 0, 2em);
+  font-family: $secondary-font;
+  text-align: left;
+}
+.mat-card h5 {
+  @include headers(mat-color($grey-shades, darker), 500, 10px 0 20px, 0, 1.5em);
+  font-family: $primary-font;
+}
+.mat-card p,
+.mat-card ul li {
+  line-height: 1.4em;
+  font-family: $primary-font;
+  font-size: 1.1em;
+  padding-bottom: 15px;
+}
 
- 
- //Text Helpers
- .text-center,
- .center {
-   text-align: center !important;
- }
- .text-right {
-   text-align: right !important;
- }
- .text-left {
-   text-align: left !important;
- }
- .float-right {
-   float: right;
- }
- .float-left {
-   float: left;
- }
- 
- //Color Helpers
- //Font
- .font-white {
-   color: $light-color!important;
- }
- 
- //Backgrounds
+// **** Cards   *************
+// *******************************
+.card {
+  min-height: 190px;
+}
+.card .mat-card-header-text {
+  margin: 0;
+}
+.card ul li {
+  margin-bottom: 8px;
+}
+.card a {
+  color: mat-color($primary);
+  text-underline-position: under;
+}
+
+// ****  Helper Classes  ****** //
+// *****************************//
+.aside-top-xs {
+  margin-top: 1em !important;
+}
+.aside-bottom-xs {
+  margin-bottom: 1em !important;
+}
+.aside-left-xs {
+  margin-left: 1em !important;
+}
+.aside-right-xs {
+  margin-right: 1em !important;
+}
+.aside-top {
+  margin-top: 2em;
+}
+.aside-bottom {
+  margin-bottom: 2em;
+}
+.aside-left {
+  margin-left: 2em !important;
+}
+.aside-right {
+  margin-right: 2em !important;
+}
+.aside-top-x1 {
+  margin-top: 4em !important;
+}
+.aside-bottom-x1 {
+  margin-bottom: 4em !important;
+}
+.aside-left-x1 {
+  margin-left: 4em !important;
+}
+.aside-right-x1 {
+  margin-right: 4em !important;
+}
+.strip {
+  list-style: none;
+  padding-left: 0;
+}
+.no-pad {
+  padding: 0 !important;
+}
+.hide {
+  visibility: hidden;
+}
+.show {
+  visibility: visible;
+}
+.fullHeight {
+  min-height: 100%;
+  //height: calc(100vh - 144px);
+  position: relative;
+  //padding-bottom: 80px;
+}
+.loader {
+  height: 100vh;
+  overflow: hidden;
+}
+
+//Text Helpers
+.text-center,
+.center {
+  text-align: center !important;
+}
+.text-right {
+  text-align: right !important;
+}
+.text-left {
+  text-align: left !important;
+}
+.float-right {
+  float: right;
+}
+.float-left {
+  float: left;
+}
+
+//Color Helpers
+//Font
+.font-white {
+  color: $light-color !important;
+}
+
+//Backgrounds
 .white-bg {
   background-color: $light-color;
 }
 
- .black-bg {
-   background-color: #000;
- }
- .grey-bg {
-   background-color: mat-color($grey-shades);
- }
- .lt-grey-bg {
-   background-color: mat-color($grey-shades, lighter)!important;
- }
- .primary-bg {
-   //background-color: mat-color($primary, lighter);
-   background-color: #1f92ef;
- }
- .primary-bg-dark {
-   background-color: mat-color($accent);
- }
- .accent-bg {
-   background-color: mat-color($accent, lighter);
- }
- .gradient-bg {
-   /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#5c6bc0+0,5c6bc0+22,29b6f6+22,29b6f6+45,9ccc65+45,9ccc65+100 */
-   background: #5c6bc0; /* Old browsers */
-   background: -moz-linear-gradient(
-     -45deg,
-     #5c6bc0 0%,
-     #5c6bc0 10%,
-     #29b6f6 10%,
-     #29b6f6 30%,
-     #9ccc65 30%,
-     #9ccc65 100%
-   ); /* FF3.6-15 */
-   background: -webkit-linear-gradient(
-     -45deg,
-     #5c6bc0 0%,
-     #5c6bc0 10%,
-     #29b6f6 10%,
-     #29b6f6 30%,
-     #9ccc65 30%,
-     #9ccc65 100%
-   ); /* Chrome10-25,Safari5.1-6 */
-   background: linear-gradient(
-     135deg,
-     #5c6bc0 0%,
-     #5c6bc0 10%,
-     #29b6f6 10%,
-     #29b6f6 30%,
-     #9ccc65 30%,
-     #9ccc65 100%
-   ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5c6bc0', endColorstr='#9ccc65',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
- }
- .gradient-bg2 {
-   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#0277bd+0,4591bc+28,54a7ce+45,54a7ce+53,54a7ce+60,4591bc+76,0277bd+100 */
-   background: rgb(2, 119, 189); /* Old browsers */
-   background: -moz-linear-gradient(
-     45deg,
-     rgba(2, 119, 189, 1) 0%,
-     rgba(69, 145, 188, 1) 28%,
-     rgba(84, 167, 206, 1) 45%,
-     rgba(84, 167, 206, 1) 53%,
-     rgba(84, 167, 206, 1) 60%,
-     rgba(69, 145, 188, 1) 76%,
-     rgba(2, 119, 189, 1) 100%
-   ); /* FF3.6-15 */
-   background: -webkit-linear-gradient(
-     45deg,
-     rgba(2, 119, 189, 1) 0%,
-     rgba(69, 145, 188, 1) 28%,
-     rgba(84, 167, 206, 1) 45%,
-     rgba(84, 167, 206, 1) 53%,
-     rgba(84, 167, 206, 1) 60%,
-     rgba(69, 145, 188, 1) 76%,
-     rgba(2, 119, 189, 1) 100%
-   ); /* Chrome10-25,Safari5.1-6 */
-   background: linear-gradient(
-     45deg,
-     rgba(2, 119, 189, 1) 0%,
-     rgba(69, 145, 188, 1) 28%,
-     rgba(84, 167, 206, 1) 45%,
-     rgba(84, 167, 206, 1) 53%,
-     rgba(84, 167, 206, 1) 60%,
-     rgba(69, 145, 188, 1) 76%,
-     rgba(2, 119, 189, 1) 100%
-   ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#0277bd', endColorstr='#0277bd', GradientType=1);
-   /* IE6-9 fallback on horizontal gradient */
- }
- 
+.black-bg {
+  background-color: #000;
+}
+.grey-bg {
+  background-color: mat-color($grey-shades);
+}
+.lt-grey-bg {
+  background-color: mat-color($grey-shades, lighter) !important;
+}
+.primary-bg {
+  //background-color: mat-color($primary, lighter);
+  background-color: #1f92ef;
+}
+.primary-bg-dark {
+  background-color: mat-color($accent);
+}
+.accent-bg {
+  background-color: mat-color($accent, lighter);
+}
+.gradient-bg {
+  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#5c6bc0+0,5c6bc0+22,29b6f6+22,29b6f6+45,9ccc65+45,9ccc65+100 */
+  background: #5c6bc0; /* Old browsers */
+  background: -moz-linear-gradient(
+    -45deg,
+    #5c6bc0 0%,
+    #5c6bc0 10%,
+    #29b6f6 10%,
+    #29b6f6 30%,
+    #9ccc65 30%,
+    #9ccc65 100%
+  ); /* FF3.6-15 */
+  background: -webkit-linear-gradient(
+    -45deg,
+    #5c6bc0 0%,
+    #5c6bc0 10%,
+    #29b6f6 10%,
+    #29b6f6 30%,
+    #9ccc65 30%,
+    #9ccc65 100%
+  ); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(
+    135deg,
+    #5c6bc0 0%,
+    #5c6bc0 10%,
+    #29b6f6 10%,
+    #29b6f6 30%,
+    #9ccc65 30%,
+    #9ccc65 100%
+  ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5c6bc0', endColorstr='#9ccc65',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+.gradient-bg2 {
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#0277bd+0,4591bc+28,54a7ce+45,54a7ce+53,54a7ce+60,4591bc+76,0277bd+100 */
+  background: rgb(2, 119, 189); /* Old browsers */
+  background: -moz-linear-gradient(
+    45deg,
+    rgba(2, 119, 189, 1) 0%,
+    rgba(69, 145, 188, 1) 28%,
+    rgba(84, 167, 206, 1) 45%,
+    rgba(84, 167, 206, 1) 53%,
+    rgba(84, 167, 206, 1) 60%,
+    rgba(69, 145, 188, 1) 76%,
+    rgba(2, 119, 189, 1) 100%
+  ); /* FF3.6-15 */
+  background: -webkit-linear-gradient(
+    45deg,
+    rgba(2, 119, 189, 1) 0%,
+    rgba(69, 145, 188, 1) 28%,
+    rgba(84, 167, 206, 1) 45%,
+    rgba(84, 167, 206, 1) 53%,
+    rgba(84, 167, 206, 1) 60%,
+    rgba(69, 145, 188, 1) 76%,
+    rgba(2, 119, 189, 1) 100%
+  ); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(
+    45deg,
+    rgba(2, 119, 189, 1) 0%,
+    rgba(69, 145, 188, 1) 28%,
+    rgba(84, 167, 206, 1) 45%,
+    rgba(84, 167, 206, 1) 53%,
+    rgba(84, 167, 206, 1) 60%,
+    rgba(69, 145, 188, 1) 76%,
+    rgba(2, 119, 189, 1) 100%
+  ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#0277bd', endColorstr='#0277bd', GradientType=1);
+  /* IE6-9 fallback on horizontal gradient */
+}
